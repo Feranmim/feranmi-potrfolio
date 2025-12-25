@@ -324,3 +324,98 @@ body {
         padding: 10px;
     }
 }
+
+/* FAQ & Inquiry Styles */
+.faq-inquiry-section {
+    padding: 60px 20px;
+    background-color: #1a1a1a; /* Matches your dark theme */
+    color: #ffffff;
+    border-top: 1px solid #333;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #007bff; /* Matches your blue theme color */
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #333;
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f4f4f4;
+}
+
+.faq-answer {
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+
+.inquiry-cta {
+    text-align: center;
+    background: #252525;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-inquiry {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background 0.6s;
+}
+
+.btn-inquiry:hover {
+    background-color: #133961;
+}
+
+
+/* Enquiry Form Styles */
+.mini-enquiry-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.mini-enquiry-form input, 
+.mini-enquiry-form textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #1a1a1a; /* Matches your site's dark theme */
+    border: 1px solid #333;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.mini-enquiry-form textarea {
+    resize: vertical; /* Allows users to expand the box if needed */
+}
+
+.btn-inquiry {
+    background-color: #007bff; /* Matches your theme blue */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
