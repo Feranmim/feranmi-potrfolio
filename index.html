@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eyitayo Feranmi - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts: Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind Configuration -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+            },
+            colors: {
+              primary: "#0ea5e9" /* Sky 500 */,
+              dark: "#0f172a" /* Slate 900 */,
+              secondary: "#64748b" /* Slate 500 */,
+              "card-bg": "#f8fafc",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Custom Styles (Extracted from the original file) -->
+    <style>
+      .hero-bg {
+        background-color: #0f172a;
+        background-image: linear-gradient(
+            rgba(15, 23, 42, 0.9),
+            rgba(15, 23, 42, 0.9)
+          ),
+          linear-gradient(rgba(14, 165, 233, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(14, 165, 233, 0.1) 1px, transparent 1px);
+        background-size: 100% 100%, 40px 40px, 40px 40px;
+      }
+
+      .typing-cursor::after {
+        content: "|";
+        animation: blink 1s step-start infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="font-sans text-slate-800 antialiased">
+    <!-- Navigation -->
+    <nav
+      class="fixed w-full z-50 bg-dark/95 backdrop-blur-sm border-b border-slate-800 text-white transition-all duration-300"
+      id="navbar"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer">
+            <div
+              class="w-10 h-10 bg-primary rounded text-white flex items-center justify-center font-bold text-xl"
+            >
+              FE
+            </div>
+            <span class="font-bold text-xl tracking-wide uppercase"
+              >Eyitayo Feranmi</span
+            >
+          </div>
+
+          <div class="hidden md:flex space-x-6 items-center">
+            <a
+              href="#home"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#skills"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Skills</a
+            >
+            <a
+              href="#services"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="#experience"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Experience</a
+            >
+            <a
+              href="#projects"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Projects</a
+            >
+            <a
+              href="#achievements"
+              class="text-sm font-medium hover:text-primary transition-colors"
+              >Achievements</a
+            >
+            <a
+              href="#contact"
+              class="px-5 py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-all text-sm font-medium"
+              >Contact</a
+            >
+          </div>
+
+          <div class="md:hidden flex items-center">
+            <button
+              onclick="toggleMenu()"
+              class="text-gray-300 hover:text-white focus:outline-none"
+            >
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-dark border-t border-slate-800 absolute w-full"
+      >
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="#home"
+            onclick="toggleMenu()"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-primary hover:bg-slate-800"
+            >Home</a
+          >
+          <a
+            href="#about"
+            onclick="toggleMenu()"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-primary hover:bg-slate-800"
+            >About</a
+          >
+          <a
+            href="#skills"
+            onclick="toggleMenu()"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-primary hover:bg-slate-800"
+            >Skills</a
+          >
+          <a
+            href="#experience"
+            onclick="toggleMenu()"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-primary hover:bg-slate-800"
+            >Experience</a
+          >
+          <a
+            href="#projects"
+            onclick="toggleMenu()"
+            class="block px-3 py-2 rounded-md text-base font-medium hover:text-primary hover:bg-slate-800"
+            >Projects</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[100px]"
+      ></div>
+      <div
+        class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px]"
+      ></div>
+
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full text-center"
+      >
+        <div
+          class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700 text-primary text-sm font-medium mb-8"
+        >
+          <span class="flex h-2 w-2 relative">
+            <span
+              class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+            ></span>
+            <span
+              class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+            ></span>
+          </span>
+          Available for Remote & Hybrid Opportunities Globally
+        </div>
+
+        <h1
+          class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 tracking-tight"
+        >
+          Hi, I'm
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan-300"
+            >Eyitayo Feranmi</span
+          >
+        </h1>
+
+        <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 font-medium">
+          <p>
+            Digital Marketing Strategist &
+            <span id="typed-text"></span>
+          </p>
+          <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+          <script>
+            var options = {
+              strings: [
+                "Automation Specialist",
+                "Digital Strategist",
+                "Custom Chatbot Expert",
+              ],
+              typeSpeed: 80, // Typing speed in milliseconds
+              backSpeed: 90, // Erasing speed
+              loop: true, // Keep repeating the animation
+            };
+
+            var typed = new Typed("#typed-text", options);
+          </script>
+        </h2>
+
+        <p
+          class="max-w-3xl mx-auto text-gray-400 text-lg mb-10 leading-relaxed"
+        >
+          Full Stack PHP Developer & Digital Marketing Strategist with
+          <span class="text-white font-semibold">3+ years</span> of experience
+          building scalable web applications, graphics designing, video editing
+          and lots more...
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16">
+          <a
+            href="#projects"
+            class="px-8 py-3.5 rounded bg-primary text-white font-semibold shadow-lg shadow-primary/30 hover:bg-sky-600 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-code"></i> View My Portfolio
+          </a>
+          <a
+            href="#contact"
+            class="px-8 py-3.5 rounded border border-slate-600 text-white font-semibold hover:bg-slate-800 transition-all flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-envelope"></i> Hire Me Now
+          </a>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-slate-800 pt-10 max-w-4xl mx-auto"
+        >
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+              50+
+            </div>
+            <div class="text-sm text-gray-400">Projects Delivered</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-white mb-1">3+</div>
+            <div class="text-sm text-gray-400">Years Experience</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+              50+
+            </div>
+            <div class="text-sm text-gray-400">Happy Clients</div>
+          </div>
+          <div>
+            <div class="text-3xl md:text-4xl font-bold text-white mb-1">
+              15K+
+            </div>
+            <div class="text-sm text-gray-400">Social Media Growth</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="relative group">
+            <div
+              class="relative rounded-2xl overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] max-w-md mx-auto"
+            >
+              <img src="" alt="" />
+              <img
+                src="WhatsApp Image 2025-12-07 at 13.58.42_9bc7afe6.jpg"
+                alt="Eyitayo Feranmi"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute bottom-6 left-6 bg-[#f0f9ff] p-4 rounded-xl shadow-lg border border-primary/20 flex items-center gap-3 max-w-[200px]"
+              >
+                <div class="bg-primary/10 p-2 rounded-full text-primary">
+                  <i class="fas fa-certificate text-xl"></i>
+                </div>
+                <div>
+                  <div class="text-xs text-secondary font-medium uppercase">
+                    Developer of the Year
+                  </div>
+                  <div class="font-bold text-dark text-sm">LAUTECH 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <span
+              class="text-primary font-bold tracking-wider text-sm uppercase"
+              >Who I Am</span
+            >
+            <h2 class="text-4xl font-bold text-dark mt-2 mb-6">About Me</h2>
+            <p class="text-secondary mb-6 leading-relaxed">
+              With over <strong class="text-dark">3 years+</strong> of
+              professional experience, I'm a versatile tech professional who
+              bridges the gap between development and marketing. I specialize in
+              building high-performance web applications using
+              <strong class="text-primary"
+                >PHP (Laravel),JavaScript, MySQL, and modern JavaScript
+                frameworks.</strong
+              >
+            </p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-code text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark">Clean Code</h4>
+                  <p class="text-xs text-secondary mt-1">
+                    Scalable industry standards.
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div
+                  class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center text-primary flex-shrink-0"
+                >
+                  <i class="fas fa-chart-line text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-dark">2x ROI Growth</h4>
+                  <p class="text-xs text-secondary mt-1">
+                    Data-driven campaigns.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section (Updated) -->
+    <section id="experience" class="py-20 bg-gray-50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-primary font-bold tracking-wider text-sm uppercase"
+            >Career Journey</span
+          >
+          <h2 class="text-4xl font-bold text-dark mt-2">
+            Professional Experience
+          </h2>
+          <p class="mt-4 text-secondary">
+            3+ years of delivering exceptional results worldwide, marketing
+            agencies, and enterprise solutions
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Vertical Center Line -->
+          <div
+            class="hidden md:block absolute left-1/2 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"
+          ></div>
+
+          <!-- Item 1: Savvy Media (Left) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 md:pr-10 text-right order-1">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-left"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-3"
+                  >Aug 2025 - Present</span
+                >
+                <h3 class="font-bold text-lg text-dark">Graphics Designer</h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-building mr-1"></i> Infinity Paint Africa
+                </div>
+                <p class="text-secondary text-sm mb-3">
+                  Designing compelling graphics and marketing materials to boost
+                  brand presence.
+                </p>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>
+                    Designed 10+ graphics for brand campaigns and social media
+                  </li>
+
+                  <li>
+                    Improved lead conversion by 35% through intuitive UI design
+                  </li>
+                  <li>
+                    Collaborated with marketing team on brand positioning
+                    strategy
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:w-5/12 order-2"></div>
+          </div>
+
+          <!-- Item 2: E-Frame Concept (Right) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 order-1"></div>
+            <div class="md:w-5/12 md:pl-10 order-2">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-primary text-white text-xs font-bold rounded-full mb-3"
+                  >2025 - Present</span
+                >
+                <h3 class="font-bold text-lg text-dark">
+                  Full Stack Developer
+                </h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-laptop-code mr-1"></i> E-Frame Concept
+                </div>
+                <p class="text-secondary text-sm mb-3"></p>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>Built systems handling 1000+ daily transactions.</li>
+                  <li>Implemented compliance security protocols.</li>
+                  <li>Enhanced reporting accuracy by 40%.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: SQI College Of ICT Nigeria (Left) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 md:pr-10 text-right order-1">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-left"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-3"
+                  >Aug 2024 - Present</span
+                >
+                <h3 class="font-bold text-lg text-dark">
+                  Full Stack Developer
+                </h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-building mr-1"></i> SQI College Of ICT
+                  Nigeria
+                </div>
+                <p class="text-secondary text-sm mb-3">
+                  Creating event management websites using Laravel & WordPress.
+                </p>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>Improved site speed by 60% via optimization.</li>
+                  <li>Developed custom event registration apps.</li>
+                  <li>Managed company website</li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:w-5/12 order-2"></div>
+          </div>
+
+          <!-- Item 4: OSCORP Developers (Right) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-primary rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 order-1"></div>
+            <div class="md:w-5/12 md:pl-10 order-2">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-3"
+                  >2024 - Present</span
+                >
+                <h3 class="font-bold text-lg text-dark">
+                  Full Stack Developer
+                </h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-code mr-1"></i> OSCORP Developers
+                </div>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>Delivered full-stack websites for diverse clients.</li>
+                  <li>Integrated systems and marketing tools.</li>
+                  <li>Maintained 100% client satisfaction rate.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5:  E-FRAME Technologies (Left) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 md:pr-10 text-right order-1">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow text-left"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-3"
+                  >2019 - 2022</span
+                >
+                <h3 class="font-bold text-lg text-dark">WordPress Developer</h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-building mr-1"></i> E-FRAME Technologies
+                </div>
+                <p class="text-secondary text-sm mb-3">
+                  Created and maintained over 20 WordPress websites with
+                  WooCommerce.
+                </p>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>Improved lead conversion by 50% via UI/UX.</li>
+                  <li>Trained junior developers on WP best practices.</li>
+                </ul>
+              </div>
+            </div>
+            <div class="md:w-5/12 order-2"></div>
+          </div>
+
+          <!-- Item 6: Developer (Right) -->
+          <div class="md:flex items-center justify-between w-full mb-12">
+            <div
+              class="hidden md:block absolute left-1/2 w-4 h-4 bg-gray-300 rounded-full border-4 border-white shadow transform -translate-x-1/2 z-10"
+            ></div>
+            <div class="md:w-5/12 order-1"></div>
+            <div class="md:w-5/12 md:pl-10 order-2">
+              <div
+                class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <span
+                  class="inline-block px-3 py-1 bg-slate-200 text-slate-700 text-xs font-bold rounded-full mb-3"
+                  >2019 - 2021</span
+                >
+                <h3 class="font-bold text-lg text-dark">
+                  Developer & Tech Consultant
+                </h3>
+                <div class="text-primary text-sm font-medium mb-3">
+                  <i class="fas fa-globe mr-1"></i>
+                  EDDY'S FREESTYLE STUDIO
+                </div>
+                <ul class="text-xs text-secondary space-y-1 list-disc pl-4">
+                  <li>Marketed digital products leading to 30% user growth.</li>
+                  <li>
+                    Collaborated with cross-functional teams to deliver projects
+                    on time.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <span class="text-primary font-bold tracking-wider text-sm uppercase"
+            >My Work</span
+          >
+          <h2 class="text-4xl font-bold text-dark mt-2">
+            Featured Projects & Portfolio
+          </h2>
+          <p class="mt-4 text-secondary max-w-2xl mx-auto">
+            Showcasing 20+ successful projects in Website Development and
+            Digital Marketing campaigns
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex justify-center gap-4 mb-12 flex-wrap">
+          <button
+            class="px-6 py-2 bg-primary text-white rounded-full text-sm font-semibold shadow-md"
+          >
+            All Projects
+          </button>
+          <button
+            class="px-6 py-2 border border-primary text-primary hover:bg-primary/10 rounded-full text-sm font-semibold transition-colors"
+          >
+            Website Development
+          </button>
+          <button
+            class="px-6 py-2 border border-primary text-primary hover:bg-primary/10 rounded-full text-sm font-semibold transition-colors"
+          >
+            Digital Marketing
+          </button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <!-- Placeholder Image -->
+              <img
+                src="infiniy.jpg"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Infinity+Paint+Africa'"
+                class="w-full h-full object-cover"
+                alt="Infinity Paint Africa"
+              />
+
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">
+                Infinity Paint Africa
+              </h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+                Created a vibrant website for a leading paint company,
+              </p>
+              <a
+                href="https://www.google.com/maps/search/infinity+paint/@-8.1462428,15.8203125,4z?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <img
+                src="bim.jpg"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Payvessel+Fintech'"
+                class="w-full h-full object-cover"
+                alt="bim"
+              />
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">
+                Bim beauty cosmetics
+              </h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+                Developed a dynamic e-commerce platform for a beauty brand.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <img
+                src="eframe.jpg"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Etsy+E-commerce'"
+                class="w-full h-full object-cover"
+                alt="Etsy"
+              />
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">E-frame Concept</h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+                created and built a robust website and help market their brand
+                effectively.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <img
+                src="SQI.jpg"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Atlantic+Exhibition'"
+                class="w-full h-full object-cover"
+                alt="SQI College Of ICT Nigeria"
+              />
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">
+                SQI COLLEGE OF ICT
+              </h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+                Received training in this prestigious institution to enhance my
+                web development, networking and designing skills.
+              </p>
+              <a
+                href="https://sqi.edu.ng/"
+                target="_blank"
+                rel="noreferrer"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <img
+                src="atlntic.png"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Lagos+Fashion+Fair'"
+                class="w-full h-full object-cover"
+                alt="atlantic Exhibition Nigeria"
+              />
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">
+                Atlantic Exhibition Nigeria
+              </h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+                worked and trained at Atlantic Exhibition Nigeria as a Tech
+                support in helping clients set up their event websites.
+              </p>
+              <a
+                href="https://www.atlanticexhibition.com/en/home/"
+          
+                rel="noreferrer"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline" target="_blank"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div
+            class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 group hover:-translate-y-2 transition-transform duration-300"
+          >
+            <div class="h-48 overflow-hidden bg-slate-100 relative">
+              <img
+                src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Real+Estate+Listing'"
+                class="w-full h-full object-cover"
+                alt="Real Estate"
+              />
+              <div
+                class="absolute top-4 left-4 bg-dark/80 text-white text-[10px] uppercase font-bold px-2 py-1 rounded backdrop-blur-sm"
+              >
+                Website Development
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-dark mb-2">
+                PrintVo (Quality Print Solutions)
+              </h3>
+              <p class="text-secondary text-sm mb-4 line-clamp-3">
+               Marketed and developed Printivo's website to enhance user experience
+                and drive sales.
+              </p>
+              <a
+                href="https://printivo.com/"
+                class="inline-flex items-center text-primary font-semibold text-sm hover:underline" target="_blank"
+                ><i class="fas fa-external-link-alt mr-2"></i> View Live</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- More Projects CTA -->
+        <div class="mt-16 text-center">
+          <p class="text-gray-500 mb-6">
+            Want to see more projects or discuss your specific needs?
+          </p>
+          <a
+            href="#contact"
+            class="inline-flex items-center px-8 py-3 bg-primary text-white rounded-lg font-bold hover:bg-sky-600 transition-all shadow-lg shadow-primary/30"
+          >
+            <i class="fas fa-comments mr-2"></i> Let's Talk About Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <span class="text-primary font-bold tracking-wider text-sm uppercase"
+            >Recognition & Impact</span
+          >
+          <h2 class="text-4xl font-bold text-dark mt-2">
+            Key Achievements & Milestones
+          </h2>
+          <p class="mt-4 text-secondary">
+            Proven track record of delivering exceptional results and driving
+            business growth
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-trophy"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              Most Promising Student Award
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              SQI College Of ICT Nigeria(2022)
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Honored for outstanding academic and project excellence.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-globe"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              10+ Global Projects
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Across Continents
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Delivered websites for clients in Nigeria, Ghana, and France.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-users"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              5K+ Community Growth
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              In 6 Months
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Grew Facebook communities through strategic content.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">10x ROI Campaigns</h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Digital Marketing
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Consistently delivered 10x return on investment.
+            </p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              10+ Students Trained
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Global Mentorship
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Mentored developers in WordPress, PHP, and marketing.
+            </p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-tachometer-alt"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              60% Performance Boost
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Website Optimization
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Improved load times through advanced optimization.
+            </p>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">
+              40% Booking Increase
+            </h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Hospitality Sector
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Increased online bookings and customer engagement.
+            </p>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="bg-white p-8 rounded-2xl shadow-sm text-center border border-gray-100 hover:shadow-lg transition-all"
+          >
+            <div
+              class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6"
+            >
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="font-bold text-lg text-dark mb-2">99.9% Uptime</h3>
+            <p class="text-primary text-xs font-bold uppercase mb-3">
+              Reliable Systems
+            </p>
+            <p class="text-xs text-secondary leading-relaxed">
+              Maintained exceptional uptime for payment processing.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <a
+      href="#home"
+      class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-sky-600 transition-all z-50"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Custom JavaScript (Extracted from the original file) -->
+    <script>
+      // Mobile Menu Toggle
+      function toggleMenu() {
+        const menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+      }
+
+      // Navbar Scroll Effect
+      window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("navbar");
+        if (window.scrollY > 20) {
+          navbar.classList.add("shadow-lg");
+        } else {
+          navbar.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+
+    <main class="contact-page-content">
+      <div class="content-container">
+        <section class="why-choose-me">
+          <h2>Why Choose Me?</h2>
+
+          <ul class="reasons-list">
+            <li>
+              <i class="fas fa-check-circle"></i> 3+ years proven experience
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 20+ successful projects
+              delivered
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Full-stack PHP/Laravel
+              expertise
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> Digital marketing integration
+            </li>
+            <li>
+              <i class="fas fa-check-circle"></i> 24/7 support & maintenance
+            </li>
+            <li><i class="fas fa-check-circle"></i> Competitive pricing</li>
+          </ul>
+
+          <div class="contact-card email-card">
+            <i class="fas fa-envelope"></i>
+            <div class="card-details">
+              <p class="card-title">Email Address</p>
+              <a href="eyitayoferanmi96@gmail.com"
+                ><p>eyitayoferanmi96@gmail.com</p></a
+              >
+            </div>
+          </div>
+
+          <div class="contact-card phone-card">
+            <i class="fas fa-phone-alt"></i>
+            <div class="card-details">
+              <p class="card-title">Phone Number</p>
+              <a href=""><p>+234 802 052 1998</p></a>
+              <small>Available: 9AM - 10PM WAT</small>
+            </div>
+          </div>
+
+          <a
+            href="https://wa.me/2348020521998?text=Hi, im Feranmi, how can I help you today?"
+            target="_blank"
+            ><div class="contact-card whatsapp-card">
+              <i class="fab fa-whatsapp"></i>
+              <div class="card-details">
+                <p class="card-title">WhatsApp</p>
+                <p>Chat on WhatsApp</p>
+                <small>Quick Response Guaranteed</small>
+              </div>
+            </div></a
+          >
+        </section>
+
+        <section class="contact-form-section">
+          <h2>Send Me a Message</h2>
+          <p class="form-instruction">
+            Fill out the form below and I'll get back to you within 24 hours
+          </p>
+
+          <form
+            action="https://formspree.io/f/mgvglwgk"
+            target="_blank"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="form-group-row">
+              <div class="form-group half-width">
+                <label for="name">Your Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="John Doe"
+                  required
+                />
+              </div>
+              <div class="form-group half-width">
+                <label for="email">Your Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="john@example.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group half-width">
+                <label for="phone">Phone Number</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+234 XXX XXXX XXXX"
+                />
+              </div>
+              <div class="form-group half-width">
+                <label for="service">Service Needed *</label>
+                <select id="service" name="service" required>
+                  <option value="">Select a service</option>
+                  <option value="php-laravel">PHP/Laravel Development</option>
+                  <option value="wordpress">WordPress Development</option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group half-width">
+                <label for="subject">Subject *</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  placeholder="Project Inquiry"
+                  required
+                />
+              </div>
+              <div class="form-group half-width">
+                <label for="budget">Project Budget</label>
+                <select id="budget" name="budget">
+                  <option value="">Select budget range</option>
+                  <option value="500-1000">$500 - $1,000</option>
+                  <option value="1000-5000">$1,000 - $5,000</option>
+                  <option value="5000+">$5,000+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group full-width">
+              <label for="details">Project Details</label>
+              <textarea
+                id="details"
+                name="details"
+                rows="5"
+                placeholder="Tell me about your project, requirements, timeline, and any specific features you need..."
+              ></textarea>
+            </div>
+
+            <a href="https://wa.me/2348020521998">
+              <button type="submit" class="send-message-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
+            </a>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      id="contact"
+      class="bg-dark text-white py-12 border-t border-slate-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center gap-3 mb-4 md:mb-0">
+            <div
+              class="w-8 h-8 bg-primary rounded text-white flex items-center justify-center font-bold"
+            >
+              FE
+            </div>
+            <span class="font-bold text-lg tracking-wide uppercase"
+              >Eyitayo Feranmi</span
+            >
+          </div>
+          <div class="text-slate-400 text-sm">
+            &copy; 2025 Eyitayo Feranmi. All rights reserved.
+          </div>
+          <div class="flex gap-4 mt-4 md:mt-0">
+            <a
+              href="https://wa.me/2348020521998?text=Hi, im Feranmi, how can I help you today?"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"
+              target="_blank"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+            <a
+              href="ig.me/m/feranmieyitayo"
+              target="_blank"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="#"
+              target="_blank"
+              class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"
+              ><i class="fab fa-facebook"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
