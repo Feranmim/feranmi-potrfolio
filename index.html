@@ -38,8 +38,7 @@
       };
     </script>
 
-    <!-- Custom Styles (Extracted from the original file) -->
-    <style>
+      <style>
       .hero-bg {
         background-color: #0f172a;
         background-image: linear-gradient(
@@ -67,7 +66,7 @@
       }
     </style>
   </head>
-  <body class="font-sans text-slate-800 antialiased">
+  <body class="font-sans text-slate-800 antialiased" >
     <!-- Navigation -->
     <nav
       class="fixed w-full z-50 bg-dark/95 backdrop-blur-sm border-b border-slate-800 text-white transition-all duration-300"
@@ -295,7 +294,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-white">
+    <section id="about" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div class="relative group">
@@ -766,7 +765,7 @@
           >
             <div class="h-48 overflow-hidden bg-slate-100 relative">
               <img
-                src="atlntic.png"
+                src="Untitled-design-56.png"
                 onerror="this.onerror=null;this.src='https://placehold.co/800x400/3b82f6/ffffff?text=Lagos+Fashion+Fair'"
                 class="w-full h-full object-cover"
                 alt="atlantic Exhibition Nigeria"
@@ -1172,6 +1171,7 @@
                   name="name"
                   placeholder="John Doe"
                   required
+                  minlength="4" maxlength="19"
                 />
               </div>
               <div class="form-group half-width">
@@ -1212,23 +1212,23 @@
 
             <div class="form-group-row">
               <div class="form-group half-width">
-                <label for="subject">Subject *</label>
+                <label for="subject">Subject</label>
                 <input
                   type="text"
                   id="subject"
                   name="subject"
                   placeholder="Project Inquiry"
-                  required
+                  
                 />
               </div>
               <div class="form-group half-width">
                 <label for="budget">Project Budget</label>
                 <select id="budget" name="budget">
                   <option value="">Select budget range</option>
-                  <option value="500-1000">N50,000 - N100,000</option>
-                  <option value="500-1000">N100,000 - N200,000</option>
-                  <option value="500-1000">N200,000 - N400,000</option>
-                  <option value="5000+">N500,000+</option>
+                  <option value="50,000-100,000">N50,000 - N100,000</option>
+                  <option value="100,000-200,000">N100,000 - N200,000</option>
+                  <option value="200,000-400,000">N200,000 - N400,000</option>
+                  <option value="500,000+">N500,000+</option>
                 </select>
               </div>
             </div>
@@ -1238,8 +1238,9 @@
               <textarea
                 id="details"
                 name="details"
-                rows="5"
+                rows="5" minlength="40" maxlength="150"
                 placeholder="Tell me about your project, requirements, timeline, and any specific features you need..."
+                required
               ></textarea>
             </div>
 

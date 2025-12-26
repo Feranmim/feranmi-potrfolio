@@ -18,6 +18,15 @@ body {
     padding: 0;
 }
 
+#about {
+    background-color:#050000c4;
+}
+#experience {
+    background-color:rgb(39,52,69);
+}
+#projects {
+    background-color:#050000c4;
+}
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
